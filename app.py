@@ -80,7 +80,7 @@ def FoodOrder():
         MoneyLeft -= item_priceKG
         # Here MoneyLeft gets converted into a float because we are working with money
         # The item price gets subtracted from the budget 
-        print(f"\nYou have ${MoneyLeft:} left.\n")
+        print(f"\nYou have ${MoneyLeft:.2f} left.\n")
     else:
         print("Sorry, that item is not on the menu.\n")
 
@@ -99,7 +99,7 @@ def DrinkOrder():
         drink_costKG = Drinks[DrinkKG]
         MoneyLeft -= drink_cost
         MoneyLeft -= drink_costKG
-        print(f"\nYou have ${MoneyLeft:} left.\n")
+        print(f"\nYou have ${MoneyLeft:.2f} left.\n")
     else:
         print("Sorry, that drink is not available.\n")
 
@@ -115,7 +115,7 @@ def AppsOrder():
     if app_choice in Apps:
         AppCost = Apps[app_choice]
         MoneyLeft -= AppCost
-        print(f"\nYou have ${MoneyLeft:} left.\n")
+        print(f"\nYou have ${MoneyLeft:.2f} left.\n")
     else:
         print("Sorry, that appetizer is not available.\n")
 
@@ -133,7 +133,7 @@ def DesOrder():
         DesscostKG = Desserts[DessChoiceKG]
         MoneyLeft -= Desscost
         MoneyLeft -= DesscostKG
-        print(f"\nYou have${MoneyLeft:} left.\n")
+        print(f"\nYou have${MoneyLeft:.2f} left.\n")
     else:
         print("sorry, that dessert is not available\n")
 #################################################################################################################
