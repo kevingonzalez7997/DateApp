@@ -57,7 +57,23 @@ Desserts = {
 
 # Here are all the functions
 # One function for each menu category 
+# The functions for the other menu categories follow the same format
 
+def AppsOrder():
+    global MoneyLeft 
+    print("\nWelcome to Tony's. Lets start with appetizers, we have:\n")
+    for item, price in Apps.items():
+        print(f"{item}: ${price}")
+
+    app_choice = input("\nWhat can I bring for the tabel?\n")
+
+    if app_choice in Apps:
+        AppCost = Apps[app_choice]
+        MoneyLeft -= AppCost
+        print(f"\nYou have ${MoneyLeft:.2f} left.\n")
+    else:
+        print("Sorry, that appetizer is not available.\n")
+------------------------------------------------------------------------------------------
 def FoodOrder():
     # MoneyLeft is made into a global scope b/c it will be called in other function
     global MoneyLeft 
@@ -82,10 +98,8 @@ def FoodOrder():
         # The item price gets subtracted from the budget 
         print(f"\nYou have ${MoneyLeft:.2f} left.\n")
     else:
-        print("Sorry, that item is not on the menu.\n")
-
-    # The functions for the other menu categories follow the same format
-
+        print("Sorry, that item is not on the menu.\n")  
+--------------------------------------------------------------------------------------------------------------------------
 def DrinkOrder():
     global MoneyLeft  
     print('\nAnd to drink, we have:\n')
@@ -102,24 +116,7 @@ def DrinkOrder():
         print(f"\nYou have ${MoneyLeft:.2f} left.\n")
     else:
         print("Sorry, that drink is not available.\n")
-
-
-def AppsOrder():
-    global MoneyLeft 
-    print("\nWelcome to Tony's. Lets start with appetizers, we have:\n")
-    for item, price in Apps.items():
-        print(f"{item}: ${price}")
-
-    app_choice = input("\nWhat can I bring for the tabel?\n")
-
-    if app_choice in Apps:
-        AppCost = Apps[app_choice]
-        MoneyLeft -= AppCost
-        print(f"\nYou have ${MoneyLeft:.2f} left.\n")
-    else:
-        print("Sorry, that appetizer is not available.\n")
-
-
+------------------------------------------------------------------------------------------------------------------------
 def DesOrder():
     global MoneyLeft
     print("\nLastly we have desserts. Nothing is going to be as sweet as you hahah ('laughs in waiters') but today we have\n")
